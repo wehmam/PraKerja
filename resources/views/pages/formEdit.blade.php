@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center">
-                    Form Tambah Data
+                    Form Edit Data
                 </h1>
             </div>
         </div>

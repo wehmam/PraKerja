@@ -10,9 +10,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto font-weight-bold">
-                <a class="nav-item nav-link text-primary" href="{{ route('home') }}">Home</a>
-                <a class="nav-item nav-link text-primary" href="{{ route('prakerja.index') }}">Daftar Pendaftar</a>
-                {{-- <a class="nav-item nav-link" href="#"></a> --}}
+                <a class="nav-item nav-link text-primary @yield('home')" href="{{ route('home') }}">Home</a>
+                <a class="nav-item nav-link text-primary @yield('index')" href="{{ route('prakerja.index') }}">Pendaftar</a>
+                <a class="nav-item nav-link text-primary @yield('create')" href="{{ route('prakerja.create') }}">Daftar</a>
                 {{-- <a class="nav-item nav-link disabled" href="#">Disabled</a> --}}
             </div>
         </div>

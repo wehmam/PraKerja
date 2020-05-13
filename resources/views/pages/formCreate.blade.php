@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('title','Tambah Data')
+@section('daftar','active')
 @section('content')
 
     <div class="container">

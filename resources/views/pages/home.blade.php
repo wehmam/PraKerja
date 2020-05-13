@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('title','Home')
+@section('home','active')
 @section('content')
 
 <section style="background: url({{ Storage::url('assets/PraKerja/background.png') }});background-size:400px;background-repeat:no-repeat;;background-position-x:900px;">

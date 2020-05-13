@@ -3,7 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Prakerja;
+use App\model\Prakerja;
+use Illuminate\Validation\Rule;
 
 use Illuminate\Http\Request;
 
@@ -25,10 +26,11 @@ class PraKerjaRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(Prakerja $request)
+    public function rules(Prakerja $prakerja)
     {
+        $pengguna = Prakerja::where('no_ktp', '=',$this->no_ktp)->first();
         return [
-            'no_ktp' => 'required|unique:prakerjas,no_ktp,'.$request->no_ktp,
+            'no_ktp' => ['required',Rule::unique('prakerjas','no_ktp')->ignore($pengguna['id'])],
             'nama' => 'required|string|min:3',
             'orang_tua' => 'required|string',
             'nominal' => 'required|integer',

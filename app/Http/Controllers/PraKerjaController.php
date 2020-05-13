@@ -59,7 +59,9 @@ class PrakerjaController extends Controller
      */
     public function show(Prakerja $prakerja)
     {
-        //
+        $prakerja->find($prakerja->id);
+        // dd($prakerja);
+        return view('pages.detail',compact('prakerja'));
     }
 
     /**
@@ -93,7 +95,7 @@ class PrakerjaController extends Controller
        }
        $dataId->update($data);
        session()->flash('edit',"Data {$data['nama']} Berhasil Di Edit!");
-       return redirect()->route('prakerja.index');
+       return redirect()->route('prakerja.show',['prakerja' =>$prakerja->id]);
       
     }
     /**

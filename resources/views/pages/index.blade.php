@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('title','Home')
+@section('index','active')
 @section('content')
 
     <div class="container">
@@ -32,12 +33,11 @@
                         @foreach($daftar as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->nama }}</td>
                                 <td>
-                                    <img src="{{ Storage::url($item->foto) }}" width="150" alt="">
+                                    <a href="{{ route('prakerja.show',$item->id) }}">{{ $item->nama }}</a>
                                 </td>
                                 <td>
-                                    <a href="{{ route('prakerja.edit',$item->id,'edit') }}" class="badge badge-success">Edit</a>
+                                    <img src="{{ Storage::url($item->foto) }}" width="150" alt="">
                                 </td>
                                 <td>
                                     <form action="{{ route('prakerja.destroy',$item->id) }}"  method="POST">
