@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Prakerja;
+use App\model\Prakerja;
 use App\Http\Requests\PraKerjaRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
