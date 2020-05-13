@@ -13,7 +13,11 @@
         <div class="row">
             <div class="col-md-12">
                 @if(session()->has('tambah'))
-                    <div class="alert alert-danger">{{ session()->get('tambah') }}</div>
+                    <div class="alert alert-success">{{ session()->get('tambah') }}</div>
+                @elseif(session()->has('edit'))
+                    <div class="alert alert-warning">{{ session()->get('edit') }}</div>
+                @elseif(session()->has('hapus'))
+                    <div class="alert alert-danger">{{ session()->get('hapus') }}</div>
                 @endif
                 <table class="table table-hover">
                     <thead>
@@ -31,6 +35,16 @@
                                 <td>{{ $item->nama }}</td>
                                 <td>
                                     <img src="{{ Storage::url($item->foto) }}" width="150" alt="">
+                                </td>
+                                <td>
+                                    <a href="{{ route('prakerja.edit',$item->id,'edit') }}" class="badge badge-success">Edit</a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('prakerja.destroy',$item->id) }}"  method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="badge badge-danger" onclick="return confirm('Yakin Ingin Menghapus Data {{ $item->nama }} ini!')">Hapus</button>
+                                </form>
                                 </td>
                             </tr>
                         @endforeach

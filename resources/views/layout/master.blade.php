@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body>
+    @include('includes.navbar')
     @yield('content')
     
     <script src="{{ asset('bootstrap/jquery-3.4.1.min.js') }}"></script>

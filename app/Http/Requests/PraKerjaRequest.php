@@ -3,6 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Prakerja;
+
+use Illuminate\Http\Request;
+
 
 class PraKerjaRequest extends FormRequest
 {
@@ -21,14 +25,15 @@ class PraKerjaRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Prakerja $request)
     {
         return [
-            'no_ktp' => 'required',
-            'nama' => 'required',
-            'nominal' => 'required',
+            'no_ktp' => 'required|unique:prakerjas,no_ktp,'.$request->no_ktp,
+            'nama' => 'required|string|min:3',
+            'orang_tua' => 'required|string',
+            'nominal' => 'required|integer',
             'program'=> 'required',
-            'foto' => 'required_with:no_ktp,nama,nominal,program|file|image|max:1000'
+            'foto' => 'required_without:nama|file|image|max:1000'
         ];
     }
 }
