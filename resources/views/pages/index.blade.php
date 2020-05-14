@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 mt-3">
-                <h1 class="font-weight-bold  text-center">Home</h1>                
+                <h1 class="font-weight-bold  text-center">Pendaftar Prakerja</h1>                
                 <hr>
                 <a href="{{ route('prakerja.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
             </div>

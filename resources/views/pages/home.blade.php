@@ -18,6 +18,7 @@
         <div class="row mx-4">
             <div class="col-md-6 offset-1">
                 <a href="{{ route('prakerja.create') }}" class="btn btn-primary my-1">Daftar</a>
+                <a href="{{ route('prakerja.index') }}" class="btn btn-outline-primary mx-3">Pendaftar</a>
             </div>
         </div>
         <hr>

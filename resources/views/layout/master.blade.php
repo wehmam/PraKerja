@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="icon" href="{{ asset('storage/assets/PraKerja/garuda.jpg') }}" type="image/icon type">
 </head>
 <body>
     @include('includes.navbar')
